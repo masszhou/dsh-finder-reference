@@ -1,0 +1,5 @@
+# Root contribution: one Host capability and its browser client half.
+- insert:
+    - id: dsh-finder-reference
+      name: dsh-finder-reference
+      config: {}

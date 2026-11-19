@@ -1,0 +1,25 @@
+{
+  "name": "dsh-finder-reference",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reference original macOS Finder files in DSH Web without uploading copies.",
+  "license": "MIT",
+  "engines": { "node": ">=24.9.0", "dsh": "0.2.2-alpha.2" },
+  "os": ["darwin"],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "src/host-protocol.mjs", "src/host-adapter.mjs", "lib/", "bin/", "native/", "cordis.patch.yml", "README.md", "docs/security.md"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web" }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:native": "bin/drag-snapshot self-test"
+  }
+}
